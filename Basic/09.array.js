@@ -15,7 +15,7 @@ console.log(myArr.indexOf(9)) // 2nd index
 
 
 const myNewArray=myArr.join() // it makes a string
-console.log(myNewArray) 
+console.log("new ",myNewArray) 
 
 // important points
 const newArray= myArr.slice(1,3)

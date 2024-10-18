@@ -43,7 +43,7 @@ let val;
 //  val =null??20
 //  console.log(val) //10
  
-val =undefined??210
+val =undefined??21
  console.log(val) //210
 
  

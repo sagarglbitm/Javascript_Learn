@@ -25,6 +25,9 @@ one()
 
 // ----------------------------------------------------------------------------------------------------
 
+
+// Hoisting in JavaScript is a behavior where variable and function declarations are moved (or "hoisted") to the top of their containing 
+// scope (either global or function scope) during the compilation phase, before the code is executed
 console.log(add())
 function add() {
     return "add"
@@ -32,6 +35,8 @@ function add() {
 
 
 // hoisting
+
+// In this case, the variable sub is hoisted, but its value (the function) is not initialized until the assignment statement is reached
 // console.log(sub())  // cannot be acees  before initialize
 const sub = function () {
 

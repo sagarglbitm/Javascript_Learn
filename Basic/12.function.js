@@ -17,7 +17,7 @@ console.log(login()) // if we did not pass argument then it print manish
 
 // spread operator in function
 function cartAmount( num1,...price){
-    return num1,price;
+    return {num1,price};
 }
 
 console.log(cartAmount(200,300,400)) // now we can pass multiple arg as we want

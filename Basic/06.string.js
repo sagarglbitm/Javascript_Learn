@@ -1,4 +1,4 @@
-const gameName= new String("samgar")
+const gameName= new String("sagar")
 console.log(typeof gameName)
 console.log(gameName.length)
 console.log(gameName.toUpperCase())

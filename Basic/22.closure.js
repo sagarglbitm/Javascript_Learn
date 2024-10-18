@@ -21,7 +21,8 @@ outerFunction();
 
 function makeCounter() {
     let count = 0; // `count` is a private variable
-
+ 
+    // it has no name like funtion count()
     return function() {
         count += 1; // This inner function has access to `count`
         return count;
