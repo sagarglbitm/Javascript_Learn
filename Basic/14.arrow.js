@@ -17,7 +17,7 @@ user.greeting()
 // this keyword is not used in function
 
 
-// it is explict return thats why we need {} and if we use ()then it is need to write return keyword
+// it is explict return thats why we need {} and if we use {} then it is need to write return keyword
 const arrow=(num1,num2)=>{
     
     let username="sagar"

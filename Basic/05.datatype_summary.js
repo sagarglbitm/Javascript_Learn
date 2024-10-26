@@ -1,5 +1,8 @@
 // primitive
 
+// Primitive data types are the basic building blocks of a programming language. They are predefined by the language and hold a single value.
+
+
 // 7 type : String,Number,Boolean,null,undefined,Symbole,BigInt
 
 // Refrence [non-primitive]

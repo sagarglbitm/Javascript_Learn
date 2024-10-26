@@ -1,4 +1,13 @@
 
+
+// In JavaScript, a Promise is an object representing the eventual completion (or failure) of an asynchronous operation and 
+// its resulting value. 
+// Key States of a Promise:
+// Pending: The initial state, neither fulfilled nor rejected.
+// Fulfilled: The operation was completed successfully.
+// Rejected: The operation failed.
+
+
 // created
 const promiseOne=new Promise(function(resolve,reject){
     // do async task
