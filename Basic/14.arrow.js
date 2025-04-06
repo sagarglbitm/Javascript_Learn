@@ -20,9 +20,9 @@ user.greeting()
 // it is explict return thats why we need {} and if we use {} then it is need to write return keyword
 const arrow=(num1,num2)=>{
     
-    let username="sagar"
+    let usernamed="sagar"
     console.log("arrow function")
-    console.log(this.username)
+    console.log(this.usernamed)
     return num1+num2
 }
 console.log(arrow(4,5))

@@ -88,7 +88,18 @@ for (const key in language) {
 //  -----------------------------------------For Each Loop ------------------------------------------
 
 
-// for-each is high order funcn
+// for-each is high order funcn and cannot be used break and continue statement in this loop and alos not used return
+const numbers = [1, 2, 3, 4, 5];
+
+numbers.forEach((num) => {
+  if (num === 3) {
+    break; // ❌ SyntaxError: Illegal break statement
+  }
+  console.log(num);
+});
+
+
+
 const coding=["js","py","ruby","c"]
 
 coding.forEach(function(val){

@@ -59,9 +59,11 @@ promiseThree.then(function(user){
 
 })
 
+//----------------------------------------------------------------------------------------------------------------------------------
 
 // in this promise we finally use multiple then and use of catch and finally
 
+// create promise
 const promiseFour=new Promise(function(resolve,reject){
     setTimeout(function(){
         let error=false;
@@ -75,6 +77,8 @@ const promiseFour=new Promise(function(resolve,reject){
     },1000)
 })
 
+
+// handle promises with(.then,.catch,.finally)
 promiseFour.then((user)=>{
     console.log(user)
 
@@ -88,8 +92,49 @@ promiseFour.then((user)=>{
 console.log("finally resolved")
 })
 
+// -------------------------------------------------------------promise.all-----------------------------------------------------------------
+
+// Promise.all() – Run Multiple Promises in Parallel
+
+const p1 = new Promise((resolve) => setTimeout(() => resolve("P1 Done"), 1000));
+const p2 = new Promise((resolve) => setTimeout(() => resolve("P2 Done"), 2000));
+const p3 = new Promise((resolve) => setTimeout(() => resolve("P3 Done"), 3000));
+
+Promise.all([p1, p2, p3]).then((results) => console.log(results));
+
+// Output: ["P1 Done", "P2 Done", "P3 Done"] (after 3 sec)
+
+
+// -------------------------------------------------------------promise.race-----------------------------------------------------------------
+
+//Promise.race() – First Resolved or Rejected
+
+const p4 = new Promise((resolve) => setTimeout(() => resolve("P4 Done"), 1000));
+const p5 = new Promise((resolve) => setTimeout(() => resolve("P5 Done"), 2000));
+const p6 = new Promise((resolve) => setTimeout(() => resolve("P6 Done"), 3000));
+
+Promise.race([p4, p5, p6]).then((results) => console.log(results));
+
+// Output: "P4 Done" (fastest promise resolves first)
+
+
+// -------------------------------------------------------------promise.any-----------------------------------------------------------------
+
+// Promise.any() – First Fulfilled Promise (Ignores Rejections)
+
+const p7 = new Promise((_, reject) => setTimeout(() => reject("P7 Failed"), 1000));
+const p8= new Promise((resolve) => setTimeout(() => resolve("P8 Done"), 2000));
+
+Promise.any([p7, p8])
+  .then((result) => console.log(result)) // Output: "P5 Done" (ignores P4)
+  .catch((error) => console.error(error));
+
+// ✅ Returns the first successful promise (ignores failures).
+
+
 
 // now we hancled promise five with async and await
+
 const promiseFive =new Promise(function(resolve,reject){
 
     setTimeout(function(){

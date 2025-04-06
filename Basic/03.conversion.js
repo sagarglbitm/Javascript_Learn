@@ -30,6 +30,8 @@ console.log(fullName)
  console.log(1+"2")  // 12
  console.log("1"+"2") // 12
  console.log("1"+2+2) //122
+ console.log("1"-"2") // -1
+ console.log("1"-2+2) //1
  console.log(1+4+"8") //58
  console.log(+true)// 1
  console.log(-true) //-1

@@ -12,7 +12,7 @@ console.log(anotherString)
 
 const mainSting="     sagar    "
 console.log(mainSting)
-console.log(mainSting.trim()) // it remove the spaces 
+console.log(mainSting.trim()) // it remove the spaces  from start and end not in middle
 
 const url ="sagar.jha@hcl.com"
 console.log(url.replace('@hcl','@gmail'))

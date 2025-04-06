@@ -68,6 +68,7 @@ const ob2={
     6:"f"
 }
 
+// make one object by suing two different object
 const ob3=Object.assign(ob1,ob2)
 const ob4={...ob1,...ob2}// concat two object by spread operator
 console.log(ob3)

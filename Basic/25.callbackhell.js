@@ -1,66 +1,75 @@
-function getUser(userId, callback) {
-    setTimeout(() => {
-      console.log("User data fetched for:", userId);
-      callback(userId);
-    }, 1000);
-  }
-  
-  function getPosts(userId, callback) {
-    setTimeout(() => {
-      console.log("Posts fetched for user:", userId);
-      callback(["Post 1", "Post 2"]);
-    }, 1000);
-  }
-  
-  function getComments(postId, callback) {
-    setTimeout(() => {
-      console.log("Comments fetched for post:", postId);
-      callback(["Comment 1", "Comment 2"]);
-    }, 1000);
-  }
-  
-  // Callback hell structure
-  getUser(1, (userId) => {
-    getPosts(userId, (posts) => {
-      getComments(posts[0], (comments) => {
-        console.log("Comments:", comments);
-      });
+function step1(callback) {
+  setTimeout(() => {
+    console.log("Step 1 complete");
+    callback();
+  }, 1000);
+}
+
+function step2(callback) {
+  setTimeout(() => {
+    console.log("Step 2 complete");
+    callback();
+  }, 1000);
+}
+
+function step3(callback) {
+  setTimeout(() => {
+    console.log("Step 3 complete");
+    callback();
+  }, 1000);
+}
+
+step1(() => {
+  step2(() => {
+    step3(() => {
+      console.log("All steps completed!");
     });
   });
-  
+});
+// Output:
+// Step 1 complete
+// Step 2 complete
+// Step 3 complete
+// All steps completed!
 
+
+// handling callback hell
 
 //   callback hell handle by promise
-  function getUser(userId) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        console.log("User data fetched for:", userId);
-        resolve(userId);
-      }, 1000);
-    });
-  }
-  
-  function getPosts(userId) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        console.log("Posts fetched for user:", userId);
-        resolve(["Post 1", "Post 2"]);
-      }, 1000);
-    });
-  }
-  
-  function getComments(postId) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        console.log("Comments fetched for post:", postId);
-        resolve(["Comment 1", "Comment 2"]);
-      }, 1000);
-    });
-  }
-  
-  getUser(1)
-    .then((userId) => getPosts(userId))
-    .then((posts) => getComments(posts[0]))
-    .then((comments) => console.log("Comments:", comments))
-    .catch((err) => console.error(err));
-  
+function step1() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("Step 1 complete");
+      resolve();
+    }, 1000);
+  });
+}
+
+function step2() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("Step 2 complete");
+      resolve();
+    }, 1000);
+  });
+}
+
+function step3() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("Step 3 complete");
+      resolve();
+    }, 1000);
+  });
+}
+
+step1()
+  .then(step2)
+  .then(step3)
+  .then(() => console.log("All steps completed!"));
+
+// Output (cleaner!)
+// Step 1 complete
+// Step 2 complete
+// Step 3 complete
+// All steps completed!

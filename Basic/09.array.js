@@ -19,11 +19,11 @@ console.log("new ",myNewArray)
 
 // important points
 const newArray= myArr.slice(1,3)
-console.log("A",myNewArray) // it give value from index-1st to exclude 3rd index but never change in original array
+console.log("A",newArray) // it give value from index-1st to exclude 3rd index but never change in original array
 console.log("B",myArr) // it give all value
 
 const Arr=myArr.splice(1,3)
-console.log("C",Arr) // it separate value from index-1st to exclude 3rd index
+console.log("C",Arr) // it separate value from index-1st to  3rd index
 console.log("D",myArr) //but it also chnages in original value
 
 
@@ -34,15 +34,17 @@ const Dc=[34,45,44,22]
 // marvel.push(Dc)
 console.log(marvel)
 
-const heroes=marvel.push(Dc) // it will give [78,98,6,54,34,56,[34,45,44,22]] array in array
-console.log(heroes)
+marvel.push(Dc) // it will give [78,98,6,54,34,56,[34,45,44,22]] array in array
+console.log("MARVER",marvel)
 
-const allHeroes=[...marvel,...Arr]
+const allHeroes=[...marvel,...Dc]
 console.log("spread",allHeroes)
 
 const check=new Array(23,43,23,12,11)
 
 console.log(Array.isArray("sagar"))
+
+// IT MAKE  an arrayS
 console.log(Array.from("sagar"))
 
 let score1=200
